@@ -1,11 +1,11 @@
 /**
- * A byte-for-byte model of the allocator in ../../mm.c.
+ * A byte-for-byte model of the C++ allocator (mm.cpp).
  *
  * It does not store heap bytes. Instead it tracks the same structures the C
  * code walks: the implicit block list (by address), the 15 segregated free
  * lists (with identical head-insertion order), mini blocks, and the brk.
- * Every placement decision matches mm.c, so the addresses shown in the
- * visualizer are the addresses mm.c itself would return (as offsets from
+ * Every placement decision matches mm.cpp, so the addresses shown in the
+ * visualizer are the addresses mm.cpp itself would return (as offsets from
  * mem_heap_lo()).
  */
 
@@ -249,7 +249,7 @@ export class Allocator {
     return block
   }
 
-  /** mm_realloc: malloc new, copy, free old (exactly as mm.c does). */
+  /** mm_realloc: malloc new, copy, free old (exactly as mm.cpp does). */
   realloc(addr, size, id = -1, op = -1) {
     if (size === 0) {
       this.free(addr)

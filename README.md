@@ -21,7 +21,14 @@ npm run dev
 - Two numbers: **utilization** (share of the heap holding real data) and
   **throughput** (allocator requests per second, measured in your browser).
 
-The allocator in `visualizer/src/sim/allocator.js` is a JavaScript port of a
-segregated-fit, best-fit allocator with 15 size classes, 16-byte mini blocks
-and footerless allocated blocks. It returns the same addresses as the C
-original on every trace.
+## The allocator
+
+The allocator is written in C++: a 64-bit segregated-fit allocator with 15
+size classes, best fit within each class, 16-byte mini blocks, and
+footerless allocated blocks (header bits track the previous block instead).
+Freed blocks coalesce immediately with free neighbours, and the heap grows
+in 4 KB chunks when nothing fits.
+
+The visualizer runs a JavaScript port of it (`visualizer/src/sim/allocator.js`)
+that makes the same decision at every step, so it returns the same addresses
+as the C++ allocator on every trace.
