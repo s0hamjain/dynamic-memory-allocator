@@ -3,6 +3,7 @@
 /*
 !/.gitignore
 !/README.md
+!/vercel.json
 !/visualizer/
 
 .DS_Store
