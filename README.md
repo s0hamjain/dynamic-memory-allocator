@@ -1,10 +1,11 @@
 # heapscope
 
-Watch a malloc implementation work. The heap is a glowing grid, one cell per
-16 bytes, in address order (left to right, top to bottom). Blocks flash as they're allocated, freed and merged, and the heap
-widens as it grows.
+Watch a malloc implementation work. The heap is a grid of cells, one per
+16 bytes, in address order (left to right, top to bottom). Blocks flash as
+they're allocated, freed and merged, and new rows appear as the heap grows.
 
 ```sh
+cd visualizer
 npm install
 npm run dev
 ```
@@ -20,7 +21,7 @@ npm run dev
 - Two numbers: **utilization** (share of the heap holding real data) and
   **throughput** (allocator requests per second, measured in your browser).
 
-The allocator in `src/sim/allocator.js` is a JavaScript port of a
+The allocator in `visualizer/src/sim/allocator.js` is a JavaScript port of a
 segregated-fit, best-fit allocator with 15 size classes, 16-byte mini blocks
 and footerless allocated blocks. It returns the same addresses as the C
 original on every trace.

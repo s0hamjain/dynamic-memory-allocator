@@ -2,6 +2,7 @@
 # (allocator sources, build outputs, drivers, traces, tarballs) stays local.
 /*
 !/.gitignore
+!/README.md
 !/visualizer/
 
 .DS_Store
