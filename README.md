@@ -1,5 +1,7 @@
 # heapscope
 
+**Live: https://dynamic-memory-allocator-woad.vercel.app/**
+
 Watch a malloc implementation work. The heap is a grid of cells, one per
 16 bytes, in address order (left to right, top to bottom). Blocks flash as
 they're allocated, freed and merged, and new rows appear as the heap grows.
