@@ -1,0 +1,7 @@
+# Only the web visualizer is published. Everything else in this folder
+# (allocator sources, build outputs, drivers, traces, tarballs) stays local.
+/*
+!/.gitignore
+!/visualizer/
+
+.DS_Store
